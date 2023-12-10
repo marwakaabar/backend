@@ -16,39 +16,39 @@ import lombok.RequiredArgsConstructor;
 @Service
 public class BlogServiceImpl implements BlogService{
 
-	 private final BlogRepository blogRepository;
-	 
-	@Override
-	public Blog addBlog(Blog b) {
-		return blogRepository.save(b);
-	}
+    private final BlogRepository blogRepository;
 
-	@Override
-	public Blog updateBlog(Blog b) {
-		return blogRepository.save(b);
-	}
+    @Override
+    public Blog addBlog(Blog b) {
+        return blogRepository.save(b);
+    }
 
-	@Override
-	public List<Blog> getAll() {
-		return blogRepository.findAll();
-	}
+    @Override
+    public Blog updateBlog(Blog b) {
+        return blogRepository.save(b);
+    }
 
-	@Override
-	public Blog getBlogById(Long id) {
+    @Override
+    public List<Blog> getAll() {
+        return blogRepository.findAll();
+    }
+
+    @Override
+    public Blog getBlogById(Long id) {
         return blogRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Blog " + id + " INEXISTANT !!!"));
-	}
+    }
 
-	@Override
-	public boolean deleteById(Long id) {
-		blogRepository.deleteById(id);
+    @Override
+    public boolean deleteById(Long id) {
+        blogRepository.deleteById(id);
         return !(blogRepository.existsById(id));
-	}
-	
-	 public Blog updateBlogStatus(Long id, BlogStatus newStatus) {
-	        Blog blogToUpdate = blogRepository.findById(id)
-	                .orElseThrow(() -> new EntityNotFoundException("Blog not found with id: " + id));
+    }
 
-	        blogToUpdate.setStatus(newStatus);
-	        return blogRepository.save(blogToUpdate);
-	    }
+    public Blog updateBlogStatus(Long id, BlogStatus newStatus) {
+        Blog blogToUpdate = blogRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Blog not found with id: " + id));
+
+        blogToUpdate.setStatus(newStatus);
+        return blogRepository.save(blogToUpdate);
+    }
 }

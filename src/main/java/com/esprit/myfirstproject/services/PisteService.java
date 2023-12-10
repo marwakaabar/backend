@@ -1,6 +1,7 @@
 package com.esprit.myfirstproject.services;
 
 import com.esprit.myfirstproject.entities.Piste;
+import com.esprit.myfirstproject.entities.Register;
 
 import java.util.List;
 
@@ -16,4 +17,5 @@ public interface PisteService {// on ne touche plus cette interface (contient se
     Piste getId(Long id);
 
     boolean deleteById(Long id);
-}
+
+    }

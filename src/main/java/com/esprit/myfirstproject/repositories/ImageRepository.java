@@ -1,9 +1,7 @@
 package com.esprit.myfirstproject.repositories;
 
+import com.esprit.myfirstproject.entities.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.esprit.myfirstproject.entities.Image;
-
-public interface ImageRepository extends JpaRepository<Image,Long>{
-
+public interface ImageRepository extends JpaRepository<Image,Long> {
 }

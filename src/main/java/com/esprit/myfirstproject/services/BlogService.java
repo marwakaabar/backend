@@ -1,15 +1,14 @@
 package com.esprit.myfirstproject.services;
 
-import java.util.List;
-
 import com.esprit.myfirstproject.entities.Blog;
 import com.esprit.myfirstproject.entities.enums.BlogStatus;
 
+import java.util.List;
+
 public interface BlogService {
+    Blog addBlog(Blog b);
 
-	Blog addBlog(Blog b);
-
-	Blog updateBlog(Blog b);
+    Blog updateBlog(Blog b);
 
     List<Blog> getAll();
 

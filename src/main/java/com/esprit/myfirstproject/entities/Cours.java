@@ -22,6 +22,8 @@ public class Cours {
     int niveau;
     @Enumerated(EnumType.STRING)
     TypeCours typeCours;
+    private String nomCours;
+    private String description;
     @Enumerated(EnumType.STRING)
     Support support;
     Float prix;
@@ -32,6 +34,10 @@ public class Cours {
 // la classe Cours est la classe child(mapped by), elle est géréé par la classe Inscription
     private Set<Inscription> inscriptions;
 
-
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "cours")
+// la classe Cours est la classe child(mapped by), elle est géréé par la classe Inscription
+    private Set<Register> registers;
+    @OneToOne
+    private Image image;
 }

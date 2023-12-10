@@ -1,10 +1,7 @@
 package com.esprit.myfirstproject.repositories;
 
+import com.esprit.myfirstproject.entities.Blog;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.esprit.myfirstproject.entities.Blog;
-
-
-public interface BlogRepository extends JpaRepository<Blog, Long>{
-
+public interface BlogRepository extends JpaRepository<Blog,Long> {
 }

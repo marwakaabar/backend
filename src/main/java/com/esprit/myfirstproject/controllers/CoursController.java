@@ -32,7 +32,7 @@ public class CoursController {
         return coursService.addCours(Cours);
     }
 
-    @PutMapping
+    @PutMapping("{id}")
     public Cours updateCours(@RequestBody Cours Cours) {
         return coursService.updateCours(Cours);
     }

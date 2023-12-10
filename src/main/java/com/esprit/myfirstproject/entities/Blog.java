@@ -2,8 +2,8 @@ package com.esprit.myfirstproject.entities;
 
 import java.time.LocalDate;
 
-import com.esprit.myfirstproject.entities.enums.BlogStatus;
 
+import com.esprit.myfirstproject.entities.enums.BlogStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -22,14 +22,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Blog {
-	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Long id;
-	 private String titre;
-	 private String description;
-	 @Enumerated(EnumType.STRING) 
-	 private BlogStatus status;
-	 private LocalDate datecreation;
-	 @OneToOne
-	 private Image image;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String titre;
+    private String description;
+    @Enumerated(EnumType.STRING)
+    private BlogStatus status;
+    private LocalDate datecreation;
+    @OneToOne
+    private Image image;
 }

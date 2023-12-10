@@ -1,5 +1,4 @@
 package com.esprit.myfirstproject.controllers;
-
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -30,12 +29,12 @@ public class BlogController {
     public List<Blog> getAll() {
         return blogService.getAll(); // tjr appel d'une méthode provenant du service associé.
     }
-    
+
     @GetMapping("{id}")
     public Blog getBlogbyId(@PathVariable Long id) { //@pathvariable prend la mémé chaîne que le nom de l'attribut voir @GetMapping
         return blogService.getBlogById(id);
     }
-    
+
     @PostMapping
     public Blog addBlog(@RequestBody Blog Blog) {// @RequestBody pr les objets et @PathVariable pour les attributs
         return blogService.addBlog(Blog);
